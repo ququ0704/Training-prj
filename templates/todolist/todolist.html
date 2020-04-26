@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tittle</title>
+</head>
+<body>
+<ul>
+
+    <li>Tittle ----Description --------- Complete</li>
+    {% for worktodo in todolist %}
+        <li>{{ worktodo.tittle }}----{{ worktodo.description }} ----
+            {% if worktodo.is_complete %}
+                Complete
+            {% else %}
+                Uncomplete <a href="/complete{{ worktodo.id }}">已完成</a>
+            {% endif %}
+            <a href="/delete{{ worktodo.id }}">删除</a></li>
+    {% endfor %}
+
+    <li><a href="/Addnewjob">Add New Job</a></li>
+</ul>
+</body>
+</html>
